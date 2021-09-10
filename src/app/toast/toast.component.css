@@ -9,6 +9,7 @@
   text-decoration: none solid rgb(255, 255, 255);
   line-height: 20px;
   background-color: #cc0000;
+  display: grid;
 }
 
 .toast-warning {
