@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Inject,
+  TemplateRef
+} from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 
 import { ToastData, TOAST_CONFIG_TOKEN, ToastConfig } from './toast-config';
@@ -14,7 +20,7 @@ import { toastAnimations, ToastAnimationState } from './toast-animation';
 export class ToastComponent implements OnInit, OnDestroy {
   animationState: ToastAnimationState = 'default';
   iconType: string;
-
+  content: TemplateRef<any>;
   private intervalId: number;
 
   constructor(
@@ -23,6 +29,7 @@ export class ToastComponent implements OnInit, OnDestroy {
     @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig
   ) {
     this.iconType = data.type === 'success' ? 'done' : data.type;
+    this.content = data.template;
   }
 
   ngOnInit() {

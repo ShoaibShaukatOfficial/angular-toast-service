@@ -7,7 +7,7 @@ export class ToastData {
   templateContext?: {};
 }
 
-export type ToastType = 'warning' | 'info' | 'success';
+export type ToastType = 'warning' | 'error' | 'success';
 
 export interface ToastConfig {
   position?: {

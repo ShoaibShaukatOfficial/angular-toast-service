@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 
 import { ToastService } from './toast';
 
@@ -23,11 +23,12 @@ export class AppComponent {
     this.count += 1;
   }
 
-  showToastManualClose() {
+  showToastManualClose(customTemplate: TemplateRef<any>) {
     this.toastService.show(
       {
-        text: `Toast message ${this.count}`,
-        type: 'success'
+        text: `Manual Toast ${this.count}`,
+        type: 'success',
+        template: customTemplate
       },
       false
     );

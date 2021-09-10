@@ -1,2 +1,18 @@
 <button (click)="showToast()">Show toast</button><br /><br />
-<button (click)="showToastManualClose()">Show toast Manual</button>
+<button (click)="showToastManualClose(toasterContent)">
+  Show toast Manual
+</button>
+<ng-template #toasterContent>
+  <h1>Something</h1>
+  <ul>
+    <li>Blah</li>
+    <li>Blah</li>
+    <li>Blah</li>
+  </ul>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus similique
+    commodi, tempora explicabo molestiae minima nesciunt est repellat
+    recusandae, natus nulla eos sapiente et hic sequi exercitationem quia at?
+    Accusamus.
+  </p>
+</ng-template>
