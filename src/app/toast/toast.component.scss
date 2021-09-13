@@ -1,4 +1,4 @@
-.toast-error {
+.toast {
   width: 305px;
   padding: 15px;
   border-radius: 15px;
@@ -8,8 +8,16 @@
   color: #ffffff;
   text-decoration: none solid rgb(255, 255, 255);
   line-height: 20px;
-  background-color: #cc0000;
   display: grid;
+  &-error {
+    background-color: #cc0000;
+  }
+  &-warning {
+    background-color: yellow;
+  }
+  &-success {
+    background-color: green;
+  }
 }
 
 .toast-warning {
@@ -23,7 +31,6 @@
   text-decoration: none solid rgb(255, 255, 255);
   line-height: 20px;
   background-color: yellow;
-  
 }
 .toast-success {
   width: 305px;
@@ -36,5 +43,4 @@
   text-decoration: none solid rgb(255, 255, 255);
   line-height: 20px;
   background-color: green;
-  
 }
