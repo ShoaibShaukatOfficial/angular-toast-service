@@ -1,7 +1,7 @@
 <div
   [ngClass]="'toast-'+data.type"
   class="toast"
-  [@fadeAnimation]="{value: animationState, params:
+  [@fadeAnimation]="toastConfig.disableAnimation?'':{value: animationState, params:
         { fadeIn: toastConfig.animation.fadeIn, fadeOut: toastConfig.animation.fadeOut }}"
   (@fadeAnimation.done)="onFadeFinished($event)"
 >
