@@ -20,6 +20,13 @@ export class ToastService {
   ) {}
 
   show(data: ToastData, manualClose: boolean) {
+    if (!manualClose) {
+      const visibleToasters = this.toasrRefs.filter(x => x.isVisible());
+      visibleToasters.forEach(x => {
+        x.close();
+      });
+    }
+
     const positionStrategy = this.getPositionStrategy();
     const overlayRef = this.overlay.create({ positionStrategy });
     this.toastConfig.disableAnimation = !manualClose;
