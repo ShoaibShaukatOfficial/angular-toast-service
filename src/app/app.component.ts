@@ -1,6 +1,7 @@
 import { Component, TemplateRef } from '@angular/core';
 
 import { ToastService } from './toast';
+import { ToastType } from './toast/toast-config';
 
 @Component({
   selector: 'my-app',
@@ -8,20 +9,23 @@ import { ToastService } from './toast';
 })
 export class AppComponent {
   private count = 1;
+ public type=ToastType;
+  constructor(private toastService: ToastService) {
+  }
 
-  constructor(private toastService: ToastService) {}
-
-  showToast() {
+  showToast(toastType:ToastType ) {
     this.toastService.show(
       {
         text: `Toast message ${this.count}`,
-        type: 'success'
+        type:toastType 
       },
       true
     );
 
     this.count += 1;
   }
+
+
 
   showToastManualClose(customTemplate: TemplateRef<any>) {
     this.toastService.show(
