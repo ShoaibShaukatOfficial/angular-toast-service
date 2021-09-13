@@ -1,5 +1,7 @@
-<button (click)="showToast(type.success)">Show toast</button><br /><br />
-<button (click)="showToastManualClose(toasterContent)">
+<button (click)="showToast('success')"> Success toast</button><br /><br />
+<button (click)="showToast('error')"> Error toast</button><br /><br />
+<button (click)="showToast('warning')"> Warning toast</button><br /><br />
+<button (click)="showToastManualClose(toasterContent,'success')">
   Show toast Manual
 </button>
 <ng-template #toasterContent>

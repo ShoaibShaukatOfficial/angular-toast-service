@@ -23,6 +23,10 @@ export class ToastService {
     const positionStrategy = this.getPositionStrategy();
     const overlayRef = this.overlay.create({ positionStrategy });
     this.toastConfig.disableAnimation = !manualClose;
+    if(manualClose){
+      this.toastConfig.animation.fadeIn=1000;
+      this.toastConfig.animation.fadeOut=1000;
+    }
     const toastRef = new ToastRef(overlayRef);
     this.lastToast = toastRef;
     this.toasrRefs.push(toastRef);

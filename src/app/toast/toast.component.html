@@ -1,12 +1,18 @@
 <div
-  [ngClass]="'toast-'+data.type" class="toast"
-  [@fadeAnimation]="toastConfig.disableAnimation?{}:{value: animationState, params:
+  [ngClass]="'toast-'+data.type"
+  class="toast"
+  [@fadeAnimation]="{value: animationState, params:
         { fadeIn: toastConfig.animation.fadeIn, fadeOut: toastConfig.animation.fadeOut }}"
-  (@fadeAnimation.done)="onFadeFinished($event)">
+  (@fadeAnimation.done)="onFadeFinished($event)"
+>
   <span class="toast-title">{{data.type| titlecase}}</span>
   <span class="toast-icon"><mat-icon (click)="close()">close</mat-icon></span>
-  <div class="toast-content">{{ data.text }}</div>
-  
-  
-  <!-- <ng-container *ngTemplateOutlet="content"></ng-container> -->
+  <div class="toast-content" *ngIf="!content">{{ data.text }}</div>
+  <div class="toast-content" *ngIf="content">
+    <ng-container
+      *ngTemplateOutlet="content"
+      class="toast-content"
+    ></ng-container>
+    <div></div>
+  </div>
 </div>

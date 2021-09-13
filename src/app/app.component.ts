@@ -9,7 +9,7 @@ import { ToastType } from './toast/toast-config';
 })
 export class AppComponent {
   private count = 1;
- public type=ToastType;
+ //typedata = ToastType;
   constructor(private toastService: ToastService) {
   }
 
@@ -27,11 +27,11 @@ export class AppComponent {
 
 
 
-  showToastManualClose(customTemplate: TemplateRef<any>) {
+  showToastManualClose(customTemplate: TemplateRef<any>,toastType:ToastType) {
     this.toastService.show(
       {
         text: `Manual Toast ${this.count}`,
-        type: 'success',
+        type: toastType,
         template: customTemplate
       },
       false
