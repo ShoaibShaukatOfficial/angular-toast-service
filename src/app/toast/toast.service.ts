@@ -57,8 +57,9 @@ export class ToastService {
         this.lastToast.getPosition().height * (visibleToasters - 1)
       : this.toastConfig.position.top;
     if (visibleToasters === 1) {
-      position = 75;
+      position = 125;
     }
+    console.log(position);
     return position + 'px';
   }
 
